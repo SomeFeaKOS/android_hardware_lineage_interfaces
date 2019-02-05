@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,9 @@
  * limitations under the License.
  */
 
-package vendor.lineage.livedisplay@2.0;
+package vendor.lineage.trust@1.0;
 
-interface IPictureAdjustment {
-    getHueRange() generates (FloatRange range);
-    getSaturationRange() generates (FloatRange range);
-    getIntensityRange() generates (FloatRange range);
-    getContrastRange() generates (FloatRange range);
-    getSaturationThresholdRange() generates (FloatRange range);
-
-    getPictureAdjustment() generates (HSIC hsic);
-    getDefaultPictureAdjustment() generates (HSIC hsic);
-    setPictureAdjustment(HSIC hsic) generates (bool rc);
+interface IUsbRestrict {
+    isEnabled() generates (bool rc);
+    setEnabled(bool enabled);
 };

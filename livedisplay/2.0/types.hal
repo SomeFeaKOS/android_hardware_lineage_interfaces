@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 The LineageOS Project
+ * Copyright (C) 2017-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,27 @@
 
 package vendor.lineage.livedisplay@2.0;
 
-interface IPictureAdjustment {
-    getHueRange() generates (FloatRange range);
-    getSaturationRange() generates (FloatRange range);
-    getIntensityRange() generates (FloatRange range);
-    getContrastRange() generates (FloatRange range);
-    getSaturationThresholdRange() generates (FloatRange range);
+struct Range {
+    int32_t max;
+    int32_t min;
+    uint32_t step;
+};
 
-    getPictureAdjustment() generates (HSIC hsic);
-    getDefaultPictureAdjustment() generates (HSIC hsic);
-    setPictureAdjustment(HSIC hsic) generates (bool rc);
+struct FloatRange {
+    float max;
+    float min;
+    float step;
+};
+
+struct HSIC {
+    float hue;
+    float saturation;
+    float intensity;
+    float contrast;
+    float saturationThreshold;
+};
+
+struct DisplayMode {
+    int32_t id;
+    string name;
 };
